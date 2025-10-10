@@ -106,7 +106,6 @@
               android:textSize="18sp"
               android:textStyle="bold" />
 
-
           <TextView
               android:id="@+id/tvStartSubtitle"
               android:layout_width="match_parent"
@@ -115,6 +114,16 @@
               android:text="Stay updated by whats happening around the world"
               android:textColor="@color/gray"
               android:textSize="14sp" />
+
+          <TextView
+              android:id="@+id/tvNewsSnippet"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Loading news..."
+              android:textColor="@color/black"
+              android:textSize="14sp"
+              android:paddingTop="4dp"/>
+
         </LinearLayout>
       </com.google.android.material.card.MaterialCardView>
 
