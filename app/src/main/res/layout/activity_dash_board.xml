@@ -75,8 +75,8 @@
       <!-- Checklist card -->
       <com.google.android.material.card.MaterialCardView
           android:id="@+id/cardStartJourney"
-          android:layout_width="0dp"
-          android:layout_height="88dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:layout_marginTop="20dp"
           app:cardCornerRadius="12dp"
           app:cardElevation="1dp"
@@ -85,8 +85,8 @@
           app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingStart="16dp"
@@ -94,7 +94,7 @@
 
           <TextView
               android:id="@+id/tvReadNew"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:clickable="true"
               android:focusable="true"
@@ -102,13 +102,13 @@
               android:minHeight="48dp"
               android:padding="8dp"
               android:text="Read News"
-              android:textColor="@color/black"
+              android:textColor="@color/white"
               android:textSize="18sp"
               android:textStyle="bold" />
 
           <TextView
               android:id="@+id/tvStartSubtitle"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:paddingTop="4dp"
               android:text="Stay updated by whats happening around the world"
@@ -117,10 +117,10 @@
 
           <TextView
               android:id="@+id/tvNewsSnippet"
-              android:layout_width="match_parent"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Loading news..."
-              android:textColor="@color/black"
+              android:textColor="@color/white"
               android:textSize="14sp"
               android:paddingTop="4dp"/>
 
@@ -157,7 +157,7 @@
               android:minHeight="48dp"
               android:padding="8dp"
               android:text=" Take a quizzes"
-              android:textColor="@color/black"
+              android:textColor="@color/white"
               android:textSize="18sp"
               android:textStyle="bold" />
 
