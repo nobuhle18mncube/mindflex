@@ -83,6 +83,6 @@ dependencies {
 
     // JSON (if you still need it)
     implementation("org.json:json:20230227")
-    implementation(libs.news.api.java)
+
     implementation ("com.github.bumptech.glide:glide:4.15.1")
 }
