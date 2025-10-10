@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "524300074784",
+    "firebase_url": "https://registration-ae255-default-rtdb.firebaseio.com",
+    "project_id": "registration-ae255",
+    "storage_bucket": "registration-ae255.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524300074784:android:95479d111b2607023fe145",
+        "android_client_info": {
+          "package_name": "com.example.connection_to_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6F79n_Rh70xNds3LZHhLo57DrjZ2zuQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524300074784:android:d35597681bb1c3323fe145",
+        "android_client_info": {
+          "package_name": "com.example.mindflex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6F79n_Rh70xNds3LZHhLo57DrjZ2zuQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
