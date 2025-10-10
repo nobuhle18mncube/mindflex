@@ -43,13 +43,13 @@ class DashBoard : AppCompatActivity() {
         }
 
         tvPlayQuizzes?.setOnClickListener {
-            // Replace with the activity you want to show for quizzes/task manager
             try {
-                startActivity(Intent(this, Settings::class.java)) //TODO change to its relevent page
+                startActivity(Intent(this, QuizActivity::class.java))
             } catch (t: Throwable) {
-                Log.e(TAG, "Failed to open TaskManager", t)
+                Log.e(TAG, "Failed to open QuizActivity", t)
             }
         }
+
 
         fetchRandomNewsSnippet(tvNewsSnippet)
         // Bottom navigation handling
