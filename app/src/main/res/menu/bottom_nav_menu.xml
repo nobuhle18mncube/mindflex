@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/noteListFragment"
+        android:icon="@drawable/ic_addtask"
+        android:title="Notes" />
+
+    <item
+        android:id="@+id/TaskManagerFragment"
+        android:icon="@drawable/ic_format_bold"
+        android:title="Tasks" />
+
+    <item
+        android:id="@+id/addNoteFragment"
+        android:icon="@drawable/ic_checklist"
+        android:title="Add" />
+
+    <item
+        android:id="@+id/SettingsFragment"
+        android:icon="@drawable/profile_image"
+        android:title="Settings" />
+</menu>

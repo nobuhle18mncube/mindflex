@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">mindflex</string>
+    <string name="hero_image">MindFlex hero image</string>
+
+    <!-- settings -->
+    <string name="settings_title">Settings</string>
+    <string name="appearance">Appearance</string>
+    <string name="theme">Theme</string>
+    <string name="note_encryption">Note encryption</string>
+    <string name="login_security">Login &amp; security</string>
+    <string name="cloud_sync">Cloud Sync</string>
+    <string name="sync_on">Sync On</string>
+
+    <!-- profile / accessibility -->
+    <string name="profile_image_desc">Profile image</string>
+    <string name="username_label">Username</string>
+    <string name="email_label">Email</string>
+
+    <!-- task manager / common -->
+    <string name="back">Back</string>
+    <string name="add_task">Add Task</string>
+
+    <string name="security">Security</string>
+
+
+</resources>
