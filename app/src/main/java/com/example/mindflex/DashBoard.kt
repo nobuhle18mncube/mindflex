@@ -28,13 +28,14 @@ class DashBoard : AppCompatActivity() {
         val tvPlayQuizzes = findViewById<TextView?>(R.id.tvPlayQuizzes)
 
         tvReadNew?.setOnClickListener {
-            // Replace with the activity you want to show for news
             try {
-                startActivity(Intent(this, Settings::class.java))//change to its relevent page
+                startActivity(Intent(this, NewsActivity::class.java))
             } catch (t: Throwable) {
-                Log.e(TAG, "Failed to open notelist", t)
+                Log.e(TAG, "Failed to open NewsActivity", t)
             }
         }
+
+
 
         tvPlayQuizzes?.setOnClickListener {
             // Replace with the activity you want to show for quizzes/task manager

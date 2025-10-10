@@ -28,6 +28,8 @@ android {
         // inject into BuildConfig
         buildConfigField("String", "SUPABASE_URL", "\"${localProperties.getProperty("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_KEY", "\"${localProperties.getProperty("SUPABASE_KEY")}\"")
+        buildConfigField("String", "NEWSAPI_KEY", "\"${localProperties.getProperty("NEWSAPI_KEY")}\"")
+        buildConfigField("String", "GNEWS_API_KEY", "\"${localProperties.getProperty("GNEWS_API_KEY")}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -81,4 +83,6 @@ dependencies {
 
     // JSON (if you still need it)
     implementation("org.json:json:20230227")
+    implementation(libs.news.api.java)
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
 }
