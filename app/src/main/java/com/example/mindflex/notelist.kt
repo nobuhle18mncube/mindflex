@@ -102,7 +102,7 @@ class notelist : AppCompatActivity() {
                     progress.visibility = android.view.View.GONE
                 }
                 if (!response.isSuccessful) {
-                    Log.e(TAG, "Error fetching notes: ${response.code()} ${response.message()}")
+                    Log.e(TAG, "Errors fetching notes: ${response.code()} ${response.message()}")
                     runOnUiThread {
                         Toast.makeText(this@notelist, "Failed to load notes: ${response.code()}", Toast.LENGTH_LONG).show()
                         tvEmpty.visibility = android.view.View.VISIBLE
