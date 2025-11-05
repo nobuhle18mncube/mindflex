@@ -47,6 +47,7 @@ class noteeditor : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.noteeditor)
 
+
         etNoteTitle = findViewById(R.id.etNoteTitle)
         etNoteContent = findViewById(R.id.etNoteContent)
 
