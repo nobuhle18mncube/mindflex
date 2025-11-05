@@ -93,6 +93,18 @@
                             android:fontFamily="sans-serif-medium"
                             android:padding="12dp" />
 
+                        <Button
+                            android:id="@+id/googleSignInBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sign in with Google"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="#DB4437"
+                            android:textColor="#FFFFFF"
+                            android:fontFamily="sans-serif-medium"
+                            android:padding="12dp" />
+
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
