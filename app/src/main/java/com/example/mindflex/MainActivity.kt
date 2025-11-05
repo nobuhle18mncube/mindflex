@@ -9,13 +9,22 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var auth: FirebaseAuth
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,34 +36,33 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        // Configure Google Sign-In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id)) // from google-services.json
+            .requestEmail()
+            .build()
 
-        // find views
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        // --- Find Views ---
         val editTextEmail: EditText = findViewById(R.id.editTextEmail)
         val editTextPassword: EditText = findViewById(R.id.editTextPassword)
-        val loginBtn = findViewById<Button?>(R.id.loginbtn)
-        val createBtn = findViewById<Button?>(R.id.createBtn) // change to createBtn if your XML uses that id
+        val loginBtn = findViewById<Button>(R.id.loginbtn)
+        val createBtn = findViewById<Button>(R.id.createBtn)
+        val googleBtn = findViewById<Button>(R.id.googleSignInBtn)
 
-        Log.d(TAG, "views -> email:${editTextEmail != null} pwd:${editTextPassword != null} login:${loginBtn != null} signup:${createBtn!= null}")
+        Log.d(TAG, "Views ready: email=${editTextEmail != null}, password=${editTextPassword != null}")
 
-
-
-        // Login Button
-        val loginbtn: Button = findViewById(R.id.loginbtn)
-        loginbtn.setOnClickListener {
+        // --- Email/Password Login ---
+        loginBtn.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
 
-            // Validate fields
             if (email.isEmpty()) {
                 editTextEmail.error = "Email cannot be empty"
-                return@setOnClickListener
-            }
-
-            // Check for "@" symbol explicitly
-            if (!email.contains("@")) {
-                editTextEmail.error = "Email must contain '@'"
                 return@setOnClickListener
             }
 
@@ -68,38 +76,68 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Firebase sign in (auth only, no Firestore)
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     loginBtn.isEnabled = true
                     if (task.isSuccessful) {
-                        // Signed in successfully
                         Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                        // Navigate to Dashboard (use class name declared in your manifest)
-                        val intent = Intent(this, DashBoard::class.java)
-                        startActivity(intent)
+                        startActivity(Intent(this, DashBoard::class.java))
                         finish()
                     } else {
-                        val msg = task.exception?.localizedMessage ?: "Authentication failed"
-                        Toast.makeText(this, "Login failed: $msg", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Login failed: ${task.exception?.localizedMessage}", Toast.LENGTH_LONG).show()
                         Log.e(TAG, "signIn failed", task.exception)
                     }
                 }
-                .addOnFailureListener { e ->
-                    loginBtn.isEnabled = true
-                    Toast.makeText(this, "Sign-in error: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
-                    Log.e(TAG, "signInWithEmailAndPassword failure", e)
-                }
         }
 
-        // Sign-up button opens the SignUp activity
-        createBtn?.setOnClickListener {
+        // --- Google Sign-In Button ---
+        googleBtn.setOnClickListener {
+            signInWithGoogle()
+        }
+
+        // --- Create Account Button ---
+        createBtn.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }
     }
+
+    // --- Google Sign-In Logic ---
+    private val googleSignInLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+        try {
+            val account = task.getResult(ApiException::class.java)
+            Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
+            firebaseAuthWithGoogle(account.idToken!!)
+        } catch (e: ApiException) {
+            Log.w(TAG, "Google sign in failed", e)
+            Toast.makeText(this, "Google sign in failed", Toast.LENGTH_SHORT).show()
         }
-// Function to validate email format
-private fun MainActivity.isValidEmail(email: String): Boolean {
-    return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
+    private fun signInWithGoogle() {
+        val signInIntent = googleSignInClient.signInIntent
+        googleSignInLauncher.launch(signInIntent)
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user = auth.currentUser
+                    Toast.makeText(this, "Welcome ${user?.displayName}", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, DashBoard::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(this, "Authentication Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+
+    private fun isValidEmail(email: String): Boolean {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }
