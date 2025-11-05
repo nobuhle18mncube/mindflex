@@ -8,41 +8,28 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:524300074784:android:95479d111b2607023fe145",
-        "android_client_info": {
-          "package_name": "com.example.connection_to_firebase"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "524300074784-1u9bdneep2dghiideemu793f1u5qs02d.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB6F79n_Rh70xNds3LZHhLo57DrjZ2zuQE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "524300074784-1u9bdneep2dghiideemu793f1u5qs02d.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:524300074784:android:d35597681bb1c3323fe145",
         "android_client_info": {
           "package_name": "com.example.mindflex"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "524300074784-ctabk7gb7189gdr86q9j2u4l4q747lnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mindflex",
+            "certificate_hash": "0a77b18b86b2d24bf4aea0d013062de911a74677"
+          }
+        },
+        {
+          "client_id": "524300074784-h3go52m85nsb1dlqtacvspoc29e0p4gh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mindflex",
+            "certificate_hash": "90cebbd0a205b3e1ac3cdcd1fcec251ab64ab4e1"
+          }
+        },
         {
           "client_id": "524300074784-1u9bdneep2dghiideemu793f1u5qs02d.apps.googleusercontent.com",
           "client_type": 3

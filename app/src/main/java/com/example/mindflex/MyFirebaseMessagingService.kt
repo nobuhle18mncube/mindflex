@@ -79,5 +79,4 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
     }
 
-    // you may also want to override onNewToken(token: String) to send tokens to your server
 }
