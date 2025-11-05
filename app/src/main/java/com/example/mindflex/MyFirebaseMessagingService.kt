@@ -19,18 +19,23 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
 
-        val title = remoteMessage.data["title"] ?: remoteMessage.notification?.title ?: "MindFlex Notification"
-        val body = remoteMessage.data["body"] ?: remoteMessage.notification?.body ?: "You have a new message!"
+        // Handle both data and notification payload
+        val title = remoteMessage.data["title"]
+            ?: remoteMessage.notification?.title
+            ?: "MindFlex Notification"
+        val body = remoteMessage.data["body"]
+            ?: remoteMessage.notification?.body
+            ?: "You have a new message!"
 
         Log.d(TAG, "FCM Received -> Title: $title | Body: $body")
+
         showNotification(title, body)
     }
-
 
     private fun showNotification(title: String, body: String) {
         val channelId = "mindflex_channel_id"
 
-        // Create notification channel (for Android 8.0+)
+        // Create notification channel for Android 8.0+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 channelId,
@@ -41,17 +46,15 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             manager.createNotificationChannel(channel)
         }
 
-        // Build the notification
         val notification = NotificationCompat.Builder(this, channelId)
-            .setSmallIcon(R.mipmap.ic_launcher) // or R.drawable.ic_notification if you added one
+            .setSmallIcon(R.mipmap.ic_launcher) // replace with your notification icon if desired
             .setContentTitle(title)
             .setContentText(body)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setAutoCancel(true)
             .build()
 
-        // On Android 13+ we must have POST_NOTIFICATIONS granted. Service can't request it,
-        // so check and bail out if missing.
+        // Android 13+ requires POST_NOTIFICATIONS permission
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val hasPermission = ContextCompat.checkSelfPermission(
                 this,
@@ -64,14 +67,13 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             }
         }
 
-        // Additionally check whether user turned off notifications for the app
         val nmCompat = NotificationManagerCompat.from(this)
         if (!nmCompat.areNotificationsEnabled()) {
             Log.w(TAG, "Notifications are disabled by user (areNotificationsEnabled=false)")
             return
         }
 
-        // Try to show the notification, but catch SecurityException just in case
+        // Show notification safely
         try {
             nmCompat.notify(System.currentTimeMillis().toInt(), notification)
         } catch (e: SecurityException) {
@@ -80,5 +82,4 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             Log.e(TAG, "Unexpected error showing notification", t)
         }
     }
-
 }
