@@ -77,6 +77,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation("com.squareup.okio:okio:3.4.0")
+    implementation("com.google.firebase:firebase-analytics-ktx:22.3.0")
 
     implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("com.google.firebase:firebase-auth:22.3.0")
