@@ -15,6 +15,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.random.Random
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DashBoard : AppCompatActivity() {
@@ -48,6 +49,15 @@ class DashBoard : AppCompatActivity() {
             } catch (t: Throwable) {
                 Log.e(TAG, "Failed to open QuizActivity", t)
             }
+        }
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w("FCM", "Token fetch failed", task.exception)
+                return@addOnCompleteListener
+            }
+            val token = task.result
+            Log.d("FCM", "FCM token: $token") // copy this token to Firebase Console -> Cloud Messaging -> Send test message
         }
 
 
