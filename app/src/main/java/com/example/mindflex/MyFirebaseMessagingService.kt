@@ -19,11 +19,13 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         super.onMessageReceived(remoteMessage)
 
-        val title = remoteMessage.notification?.title ?: "MindFlex Notification"
-        val body = remoteMessage.notification?.body ?: "You have a new message!"
+        val title = remoteMessage.data["title"] ?: remoteMessage.notification?.title ?: "MindFlex Notification"
+        val body = remoteMessage.data["body"] ?: remoteMessage.notification?.body ?: "You have a new message!"
 
+        Log.d(TAG, "FCM Received -> Title: $title | Body: $body")
         showNotification(title, body)
     }
+
 
     private fun showNotification(title: String, body: String) {
         val channelId = "mindflex_channel_id"
