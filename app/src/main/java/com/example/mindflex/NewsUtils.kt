@@ -1,6 +1,7 @@
 package com.example.mindflex
 
 import android.content.Context
+import androidx.core.content.edit
 
 object NewsUtils {
     private const val PREFS_NAME = "news_prefs"
@@ -13,6 +14,6 @@ object NewsUtils {
 
     fun saveLastNewsTitle(context: Context, title: String) {
         val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-        prefs.edit().putString(KEY_LAST_TITLE, title).apply()
+        prefs.edit { putString(KEY_LAST_TITLE, title) }
     }
 }

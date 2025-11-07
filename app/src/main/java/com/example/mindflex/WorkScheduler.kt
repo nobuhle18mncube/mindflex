@@ -20,7 +20,7 @@ object WorkScheduler {
 
         val workRequest = PeriodicWorkRequestBuilder<NewsWorker>(repeatIntervalHours, TimeUnit.HOURS)
             .setConstraints(constraints)
-            .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS) // safe retry policy
+            .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 10, TimeUnit.SECONDS)
             .build()
 
         WorkManager.getInstance(context).enqueueUniquePeriodicWork(
@@ -29,7 +29,6 @@ object WorkScheduler {
             workRequest
         )
     }
-
 
     fun cancelScheduledNewsWorker(context: Context) {
         WorkManager.getInstance(context).cancelUniqueWork(UNIQUE_WORK_NAME)
