@@ -44,7 +44,7 @@ It features persistent login, offline-first news caching, and full multi-languag
 
 | Notes | Quizzes | Settings |
 |--------|----------|-----------|
-| ![Notes](https://github.com/user-attachments/assets/d1291dc9-f02c-4385-864f-e3903e389992) | ![Quizzes![WhatsApp Image 2025-11-07 at 20 02 30](https://github.com/user-attachments/assets/6b456200-eece-4241-8438-943914bb7312) | ![Settings](https://github.com/user-attachments/assets/0d9b7eba-829e-4f31-8938-7e4719f971d9) |
+| ![Notes](https://github.com/user-attachments/assets/d1291dc9-f02c-4385-864f-e3903e389992) | ![Quizzes](https://github.com/user-attachments/assets/6b456200-eece-4241-8438-943914bb7312) | ![Settings](https://github.com/user-attachments/assets/0d9b7eba-829e-4f31-8938-7e4719f971d9) |
 
 
 ---
