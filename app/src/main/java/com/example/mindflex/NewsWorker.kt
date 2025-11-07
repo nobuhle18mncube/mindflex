@@ -9,9 +9,6 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-
 
 private const val TAG = "NewsWorker"
 private const val CHANNEL_ID = "mindflex_news_channel"
@@ -21,30 +18,21 @@ class NewsWorker(
     workerParams: WorkerParameters
 ) : CoroutineWorker(appContext, workerParams) {
 
+    // Get repository from Application singleton
+    private val repository: NewsRepository by lazy {
+        (appContext as MindFlexApp).newsRepository
+    }
+
     override suspend fun doWork(): Result {
         try {
-            // 1) Build retrofit
-            val retrofit = Retrofit.Builder()
-                .baseUrl("https://gnews.io/api/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
+            Log.d(TAG, "Worker starting. Refreshing news and checking for notification.")
 
-            val api = retrofit.create(GNewsApiService::class.java)
-
-            // 2) Make the network call synchronously (safe inside CoroutineWorker)
-            val call = api.getTopHeadlines(apiKey = BuildConfig.GNEWS_API_KEY)
-            val response = call.execute()
-
-            if (!response.isSuccessful) {
-                Log.w(TAG, "GNews API response failed: ${response.code()} / ${response.message()}")
-                return Result.retry()
-            }
-
-            val newsResponse = response.body()
-            val latest = newsResponse?.articles?.firstOrNull()
+            // 1) Refresh news. This fetches from API, saves to Room,
+            // and returns the latest article from the API response.
+            val latest = repository.refreshNewsAndGetLatest()
 
             if (latest == null) {
-                Log.d(TAG, "No articles returned from GNews.")
+                Log.d(TAG, "No articles returned from API.")
                 return Result.success()
             }
 
@@ -95,7 +83,7 @@ class NewsWorker(
         }
 
         val notification = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher) // consider replacing with a notification-specific icon
+            .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(title)
             .setContentText(body)
             .setStyle(androidx.core.app.NotificationCompat.BigTextStyle().bigText(body))
@@ -103,8 +91,12 @@ class NewsWorker(
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
 
-        // Safety: we assume notification permission was requested elsewhere (MainActivity/BaseActivity)
-        NotificationManagerCompat.from(applicationContext)
-            .notify(System.currentTimeMillis().toInt(), notification)
+        // We assume notification permission was requested elsewhere (BaseActivity)
+        try {
+            NotificationManagerCompat.from(applicationContext)
+                .notify(System.currentTimeMillis().toInt(), notification)
+        } catch (e: SecurityException) {
+            Log.w(TAG, "Failed to send notification (SecurityException)", e)
+        }
     }
 }

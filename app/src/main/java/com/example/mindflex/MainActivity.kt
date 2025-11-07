@@ -39,6 +39,19 @@ class MainActivity : BaseActivity() {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
 
+        // *** START: LOGIN PERSISTENCE CHECK ***
+        // Check if user is already signed in (non-null)
+        if (auth.currentUser != null) {
+            Log.d(TAG, "User already logged in: ${auth.currentUser?.uid}")
+            // User is signed in, skip login and go to Dashboard
+            startActivity(Intent(this, DashBoard::class.java))
+            finish() // Finish this activity so user can't press "back" to it
+            return // Stop executing the rest of onCreate
+        }
+        // *** END: LOGIN PERSISTENCE CHECK ***
+
+        // If auth.currentUser was null, we continue to set up the login UI...
+
         // Configure Google Sign-In
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)) // from google-services.json

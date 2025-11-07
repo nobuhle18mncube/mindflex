@@ -2,25 +2,31 @@ package com.example.mindflex
 
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import kotlin.random.Random
-import com.google.firebase.messaging.FirebaseMessaging
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlin.random.Random
 
 class DashBoard : AppCompatActivity() {
+
+    // Get repository from Application
+    private val repository: NewsRepository by lazy {
+        (application as MindFlexApp).newsRepository
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,19 +65,18 @@ class DashBoard : AppCompatActivity() {
                 return@addOnCompleteListener
             }
             val token = task.result
-            Log.d("FCM", "FCM token: $token") // copy this token to Firebase Console -> Cloud Messaging -> Send test message
+            Log.d("FCM", "FCM token: $token")
         }
 
-
+        // Fetch random news snippet from OFFLINE CACHE
         fetchRandomNewsSnippet(tvNewsSnippet)
-        // Bottom navigation handling
+
         // --- START: schedule periodic work for news checking ---
-        // This will schedule a periodic worker once (ExistingPeriodicWorkPolicy.KEEP prevents duplicates)
         WorkScheduler.scheduleNewsWorker(this)
 
-        // Optional: run a one-time test immediately (remove after testing)
-        val oneTime = OneTimeWorkRequest.from(NewsWorker::class.java)
-        WorkManager.getInstance(this).enqueue(oneTime)
+        // Optional: run a one-time test immediately
+        // val oneTime = OneTimeWorkRequest.from(NewsWorker::class.java)
+        // WorkManager.getInstance(this).enqueue(oneTime)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener { item ->
@@ -95,45 +100,45 @@ class DashBoard : AppCompatActivity() {
                 else -> false
             }
         }
-
     }
 
-
+    /**
+     * Fetches a random news snippet from the local Room database
+     * instead of the network.
+     */
     private fun fetchRandomNewsSnippet(tvNewsSnippet: TextView) {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://gnews.io/api/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        lifecycleScope.launch(Dispatchers.IO) {
+            // Get all articles from the DAO (blocking)
+            val articles = (application as MindFlexApp).database.articleDao().getAllArticlesBlocking()
+            val gNewsArticles = articles.map { it.toGNewsArticle() } // Convert to display model
 
-        val service = retrofit.create(GNewsApiService::class.java)
-        val apiKey = "YOUR_GNEWS_API_KEY"
-
-        service.getTopHeadlines(apiKey = apiKey).enqueue(object : Callback<GNewsResponse> {
-            override fun onResponse(call: Call<GNewsResponse>, response: Response<GNewsResponse>) {
-                val articles = response.body()?.articles
-                if (!articles.isNullOrEmpty()) {
-                    val randomArticle = articles[Random.nextInt(articles.size)]
+            withContext(Dispatchers.Main) {
+                if (gNewsArticles.isNotEmpty()) {
+                    val randomArticle = gNewsArticles[Random.nextInt(gNewsArticles.size)]
                     tvNewsSnippet.text = randomArticle.title ?: "No title available"
 
+                    // Click listener to open the full article
                     tvNewsSnippet.setOnClickListener {
-                        val intent = Intent(this@DashBoard, NewsActivity::class.java)
-                        intent.putExtra("news_url", randomArticle.url)
-                        startActivity(intent)
+                        val url = randomArticle.url
+                        if (!url.isNullOrEmpty()) {
+                            try {
+                                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                            } catch (e: Exception) {
+                                Toast.makeText(this@DashBoard, "Could not open article", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(this@DashBoard, "No URL for this article", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 } else {
-                    tvNewsSnippet.text = "No news available"
+                    tvNewsSnippet.text = "No news available. Pull to refresh in News tab."
                 }
             }
-
-            override fun onFailure(call: Call<GNewsResponse>, t: Throwable) {
-                tvNewsSnippet.text = "Failed to load news"
-                Log.e(TAG, "News fetch failed", t)
-            }
-        })
+        }
     }
+
     private fun onLogout() {
         // perform your sign-out logic...
         WorkScheduler.cancelScheduledNewsWorker(this)
-
     }
 }
