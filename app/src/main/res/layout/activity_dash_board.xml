@@ -39,7 +39,7 @@
           android:id="@+id/tvWelcome"
           android:layout_width="0dp"
           android:layout_height="wrap_content"
-          android:text="Welcome"
+          android:text="@string/welcome"
           android:textSize="44sp"
           android:textStyle="bold"
           android:gravity="center"
@@ -101,7 +101,7 @@
               android:foreground="?attr/selectableItemBackground"
               android:minHeight="48dp"
               android:padding="8dp"
-              android:text="Read News"
+              android:text="@string/read_news"
               android:textColor="@color/white"
               android:textSize="18sp"
               android:textStyle="bold" />
@@ -111,7 +111,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:paddingTop="4dp"
-              android:text="Stay updated by whats happening around the world"
+              android:text="@string/stay_updated_by_whats_happening_around_the_world"
               android:textColor="@color/gray"
               android:textSize="14sp" />
 
@@ -119,7 +119,7 @@
               android:id="@+id/tvNewsSnippet"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="Loading news..."
+              android:text="@string/loading_news"
               android:textColor="@color/white"
               android:textSize="14sp"
               android:paddingTop="4dp"/>
@@ -156,7 +156,7 @@
               android:foreground="?attr/selectableItemBackground"
               android:minHeight="48dp"
               android:padding="8dp"
-              android:text=" Take a quizzes"
+              android:text="@string/take_a_quizzes"
               android:textColor="@color/white"
               android:textSize="18sp"
               android:textStyle="bold" />
@@ -167,7 +167,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:paddingTop="4dp"
-              android:text="Clear you mind by taking a quize"
+              android:text="@string/clear_you_mind_by_taking_a_quize"
               android:textColor="@color/gray"
               android:textSize="14sp" />
         </LinearLayout>

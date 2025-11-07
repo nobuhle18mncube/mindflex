@@ -3,33 +3,71 @@
     <string name="app_name">MindFlex</string>
     <string name="hero_image">MindFlex hero image</string>
 
-    <!--settings english -->
-    <string name="settings_title">dhgfdgfdgfdgjgfhj</string>
-    <string name="appearance">Appearance</string>
-    <string name="theme">Dark Theme</string>
-    <string name="security">Security</string>
-    <string name="note_encryption">Encrypt Notes</string>
-    <string name="login_security">Login Security</string>
-    <string name="cloud_sync">Cloud Sync</string>
-    <string name="sync_on">Enable Sync</string>
+        <!--settings zulu -->
+        <string name="settings_title">Izilungiselelo</string>
+        <string name="appearance">Ukubukeka</string>
+        <string name="theme">Indikimba Emnyama</string>
+        <string name="security">Ezokuphepha</string>
+        <string name="note_encryption">Enkriptisha Amanothi</string>
+        <string name="login_security">Ukungena &amp; Ezokuphepha</string>
+        <string name="cloud_sync">Ukuvumelanisa Kwefu</string>
+        <string name="sync_on">Nika Ukuvumelanisa</string>
 
-    <!--profile / accessibility-->
-    <string name="profile_image_desc">Profile Image</string>
-    <string name="username_label">Username</string>
-    <string name="email_label">Email</string>
+        <!--profile / accessibility-->
+        <string name="profile_image_desc">Isithombe sephrofayela</string>
+        <string name="username_label">Igama lomsebenzisi</string>
+        <string name="email_label">I-imeyili</string>
 
-    <!--task manager / common-->
-    <string name="back">Back</string>
-    <string name="add_task">Add Task</string>
+        <!--task manager / common-->
+        <string name="back">Emuva</string>
+        <string name="add_task">Faka Umsebenzi</string>
 
+        <!--language-->
+        <string name="language">Ulimi</string>
+        <string name="select_language">Khetha Ulimi</string>
+        <string name="welcome">Siyakwamukela</string>
+        <string name="read_news">Funda Izindaba</string>
+        <string name="stay_updated_by_whats_happening_around_the_world">Hlala unolwazi ngokwenzeka emhlabeni</string>
+        <string name="loading_news">Kulayishwa izindaba...</string>
+        <string name="take_a_quizzes">Thatha izivivinyo</string>
+        <string name="clear_you_mind_by_taking_a_quize">Phumula ingqondo ngokuthatha isivivinyo</string>
+        <string name="login_to_mindflex">Ngena ku-MindFlex</string>
+        <string name="email">I-imeyili</string>
+        <string name="password">Iphasiwedi</string>
+        <string name="login">Ngena</string>
+        <string name="sign_in_with_google">Ngena nge-Google</string>
+        <string name="sign_up">Bhalisa</string>
+        <string name="top_headlines">Izihloko Ezisematheni</string>
+        <string name="note_list">Uhlu Lamanothi</string>
+        <string name="search_notes">Sesha amanothi...</string>
+        <string name="no_notes_yet">Awekho amanothi okwamanje</string>
+        <string name="question_1_10">Umbuzo 1 / 10</string>
+        <string name="previous">Emuva</string>
+        <string name="loading">Kulayishwa...</string>
+        <string name="next">Okulandelayo</string>
+        <string name="difficulty">Ubunzima:</string>
+        <string name="create_your_account">Dala i-akhawunti yakho</string>
+        <string name="first_name">Igama</string>
+        <string name="last_name">Isibongo</string>
+        <string name="confirm_password">Qinisekisa Iphasiwedi</string>
+        <string name="back_to_login">← Buyela Ekungeneni</string>
+        <string name="task_manager">Umphathi Womsebenzi</string>
+        <string name="go_for_a_run">Hamba uyogijima</string>
+        <string name="call_mom">Shayela umama</string>
+        <string name="read_a_book">Funda incwadi</string>
+        <string name="buy_groceries">Thenga ukudla</string>
+        <string name="note_title">Isihloko Senothi</string>
+        <string name="note_preview">Ukuhlola Inothi</string>
+        <string name="attach_image">Namathisela Isithombe</string>
+        <string name="start_writing_your_note">Qala ukubhala inothi lakho...</string>
+        <string name="convert_to_task_set_reminder">Guqula kube Umsebenzi / Setha Isikhumbuzo</string>
+        <string name="save_note">Gcina Inothi</string>
+        <string name="bold">Okugqamile</string>
 
+        <string-array name="language_options">
+            <item>IsiNgisi</item>
+            <item>IsiBhunu</item>
+            <item>IsiZulu</item>
+        </string-array>
 
-    <!--language-->
-    <string name="language">Language</string>
-    <string name="select_language">Select Language</string>
-    <string-array name="language_options">
-        <item>English</item>
-        <item>Afrikaans</item>
-        <item>Zulu</item>
-    </string-array>
 </resources>

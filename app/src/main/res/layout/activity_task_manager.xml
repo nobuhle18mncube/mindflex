@@ -46,7 +46,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Task Manager"
+        android:text="@string/task_manager"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
@@ -64,24 +64,24 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Buy groceries"
+            android:text="@string/buy_groceries"
             android:checked="true" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Read a book"
+            android:text="@string/read_a_book"
             android:checked="true" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Call mom" />
+            android:text="@string/call_mom" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Go for a run" />
+            android:text="@string/go_for_a_run" />
     </LinearLayout>
 
 </LinearLayout>

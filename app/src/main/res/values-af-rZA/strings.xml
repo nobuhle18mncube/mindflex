@@ -4,33 +4,71 @@
     <string name="app_name">MindFlex</string>
     <string name="hero_image">MindFlex hero image</string>
 
-    <!--settings english -->
-    <string name="settings_title">HHVDHGFHGFGHDF</string>
-    <string name="appearance">Appearance</string>
-    <string name="theme">Dark Theme</string>
-    <string name="security">Security</string>
-    <string name="note_encryption">Encrypt Notes</string>
-    <string name="login_security">Login Security</string>
-    <string name="cloud_sync">Cloud Sync</string>
-    <string name="sync_on">Enable Sync</string>
+        <!--settings afrikaans -->
+        <string name="settings_title">Instellings</string>
+        <string name="appearance">Voorkoms</string>
+        <string name="theme">Donker Tema</string>
+        <string name="security">Sekuriteit</string>
+        <string name="note_encryption">Enkripteer Notas</string>
+        <string name="login_security">Aanmelding &amp; Sekuriteit</string>
+        <string name="cloud_sync">Wolk-sinkronisering</string>
+        <string name="sync_on">Aktiveer Sinkronisering</string>
 
-    <!--profile / accessibility-->
-    <string name="profile_image_desc">Profile Image</string>
-    <string name="username_label">Username</string>
-    <string name="email_label">Email</string>
+        <!--profile / accessibility-->
+        <string name="profile_image_desc">Profielprent</string>
+        <string name="username_label">Gebruikersnaam</string>
+        <string name="email_label">E-pos</string>
 
-    <!--task manager / common-->
-    <string name="back">Back</string>
-    <string name="add_task">Add Task</string>
+        <!--task manager / common-->
+        <string name="back">Terug</string>
+        <string name="add_task">Voeg Taak By</string>
 
+        <!--language-->
+        <string name="language">Taal</string>
+        <string name="select_language">Kies Taal</string>
+        <string name="welcome">Welkom</string>
+        <string name="read_news">Lees Nuus</string>
+        <string name="stay_updated_by_whats_happening_around_the_world">Bly op hoogte van wat in die wêreld gebeur</string>
+        <string name="loading_news">Laai nuus...</string>
+        <string name="take_a_quizzes">Neem vasvrae</string>
+        <string name="clear_you_mind_by_taking_a_quize">Maak jou gedagtes skoon deur \'n vasvra te neem</string>
+        <string name="login_to_mindflex">Meld aan by MindFlex</string>
+        <string name="email">E-pos</string>
+        <string name="password">Wagwoord</string>
+        <string name="login">Meld Aan</string>
+        <string name="sign_in_with_google">Meld Aan met Google</string>
+        <string name="sign_up">Registreer</string>
+        <string name="top_headlines">Top Nuusopskrifte</string>
+        <string name="note_list">Nota Lys</string>
+        <string name="search_notes">Soek notas...</string>
+        <string name="no_notes_yet">Nog geen notas nie</string>
+        <string name="question_1_10">Vraag 1 / 10</string>
+        <string name="previous">Vorige</string>
+        <string name="loading">Laai...</string>
+        <string name="next">Volgende</string>
+        <string name="difficulty">Moeilikheidsgraad:</string>
+        <string name="create_your_account">Skep jou rekening</string>
+        <string name="first_name">Voornaam</string>
+        <string name="last_name">Van</string>
+        <string name="confirm_password">Bevestig Wagwoord</string>
+        <string name="back_to_login">← Terug na Aanmelding</string>
+        <string name="task_manager">Taakbestuurder</string>
+        <string name="go_for_a_run">Gaan hardloop</string>
+        <string name="call_mom">Bel Ma</string>
+        <string name="read_a_book">Lees \'n boek</string>
+        <string name="buy_groceries">Koop kruideniersware</string>
+        <string name="note_title">Nota Titel</string>
+        <string name="note_preview">Nota Voorskou</string>
+        <string name="attach_image">Heg Prent Aan</string>
+        <string name="start_writing_your_note">Begin om jou nota te skryf...</string>
+        <string name="convert_to_task_set_reminder">Skakel om na Taak / Stel Herinnering</string>
+        <string name="save_note">Stoor Nota</string>
+        <string name="bold">Vet</string>
 
+        <string-array name="language_options">
+            <item>Engels</item>
+            <item>Afrikaans</item>
+            <item>Zoeloe</item>
+        </string-array>
 
-    <!--language-->
-    <string name="language">Language</string>
-    <string name="select_language">Select Language</string>
-    <string-array name="language_options">
-        <item>English</item>
-        <item>Afrikaans</item>
-        <item>Zulu</item>
-    </string-array>
-</resources>
+    </resources>

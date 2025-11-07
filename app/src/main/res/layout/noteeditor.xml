@@ -16,7 +16,7 @@
         <!-- Note Title -->
         <EditText
             android:id="@+id/etNoteTitle"
-            android:hint="Note Title"
+            android:hint="@string/note_title"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
@@ -37,13 +37,13 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Bold"
+                android:contentDescription="@string/bold"
                 android:src="@drawable/ic_format_bold" />
 
             <ImageButton
                 android:id="@+id/btnAttachImage"
                 android:src="@drawable/ic_image"
-                android:contentDescription="Attach Image"
+                android:contentDescription="@string/attach_image"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_width="48dp"
                 android:layout_height="48dp" />
@@ -51,7 +51,7 @@
             <ImageButton
                 android:id="@+id/btnAttachchecklist"
                 android:src="@drawable/ic_checklist"
-                android:contentDescription="Attach Image"
+                android:contentDescription="@string/attach_image"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_width="48dp"
                 android:layout_height="48dp" />
@@ -67,14 +67,14 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:gravity="top"
-            android:hint="Start writing your note..."
+            android:hint="@string/start_writing_your_note"
             android:inputType="textMultiLine"
             android:padding="12dp"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/btnConvertToTask"
-            android:text="Convert to Task / Set Reminder"
+            android:text="@string/convert_to_task_set_reminder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -84,7 +84,7 @@
         <!-- Save Button -->
         <Button
             android:id="@+id/btnSave"
-            android:text="Save Note"
+            android:text="@string/save_note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

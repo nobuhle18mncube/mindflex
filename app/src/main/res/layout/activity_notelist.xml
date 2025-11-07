@@ -11,7 +11,7 @@
 
     <TextView
         android:id="@+id/tvTitle"
-        android:text="Note List"
+        android:text="@string/note_list"
         android:textSize="28sp"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
 
     <EditText
         android:id="@+id/etSearch"
-        android:hint="Search notes..."
+        android:hint="@string/search_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
@@ -40,7 +40,7 @@
         android:id="@+id/tvEmpty"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No notes yet"
+        android:text="@string/no_notes_yet"
         android:textAlignment="center"
         android:visibility="gone"
         android:padding="12dp"

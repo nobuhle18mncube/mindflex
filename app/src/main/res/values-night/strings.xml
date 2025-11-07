@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MindFlex</string>
-    <string name="hero_image">MindFlex hero image</string>
-
-    <!--settings english -->
-    <string name="settings_title">Settings</string>
-    <string name="appearance">Appearance</string>
-    <string name="theme">Dark Theme</string>
-    <string name="security">Security</string>
-    <string name="note_encryption">Encrypt Notes</string>
-    <string name="login_security">Login Security</string>
-    <string name="cloud_sync">Cloud Sync</string>
-    <string name="sync_on">Enable Sync</string>
-
-    <!--profile / accessibility-->
-    <string name="profile_image_desc">Profile Image</string>
-    <string name="username_label">Username</string>
-    <string name="email_label">Email</string>
-
-    <!--task manager / common-->
-    <string name="back">Back</string>
-    <string name="add_task">Add Task</string>
-
-    <!--language-->
-    <string name="language">Language</string>
-    <string name="select_language">Select Language</string>
     <string name="welcome">Welcome</string>
     <string name="read_news">Read News</string>
     <string name="stay_updated_by_whats_happening_around_the_world">Stay updated by whats happening around the world</string>
@@ -63,10 +38,4 @@
     <string name="convert_to_task_set_reminder">Convert to Task / Set Reminder</string>
     <string name="save_note">Save Note</string>
     <string name="bold">Bold</string>
-    <string-array name="language_options">
-        <item>English</item>
-        <item>Afrikaans</item>
-        <item>Zulu</item>
-    </string-array>
-
 </resources>
