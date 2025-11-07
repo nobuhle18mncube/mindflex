@@ -30,9 +30,7 @@ object WorkScheduler {
         )
     }
 
-    /**
-     * Cancel the scheduled periodic worker (useful for dev/testing).
-     */
+
     fun cancelScheduledNewsWorker(context: Context) {
         WorkManager.getInstance(context).cancelUniqueWork(UNIQUE_WORK_NAME)
     }

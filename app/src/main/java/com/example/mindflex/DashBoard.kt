@@ -9,6 +9,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkManager
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Call
@@ -63,6 +65,14 @@ class DashBoard : AppCompatActivity() {
 
         fetchRandomNewsSnippet(tvNewsSnippet)
         // Bottom navigation handling
+        // --- START: schedule periodic work for news checking ---
+        // This will schedule a periodic worker once (ExistingPeriodicWorkPolicy.KEEP prevents duplicates)
+        WorkScheduler.scheduleNewsWorker(this)
+
+        // Optional: run a one-time test immediately (remove after testing)
+        val oneTime = OneTimeWorkRequest.from(NewsWorker::class.java)
+        WorkManager.getInstance(this).enqueue(oneTime)
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -121,5 +131,9 @@ class DashBoard : AppCompatActivity() {
             }
         })
     }
+    private fun onLogout() {
+        // perform your sign-out logic...
+        WorkScheduler.cancelScheduledNewsWorker(this)
 
+    }
 }
