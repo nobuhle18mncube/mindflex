@@ -63,8 +63,23 @@
         <string name="convert_to_task_set_reminder">Guqula kube Umsebenzi / Setha Isikhumbuzo</string>
         <string name="save_note">Gcina Inothi</string>
         <string name="bold">Okugqamile</string>
+        <string name="no_news">Azikho izindaba ezitholakalayo. Donsa phansi ukuze uvuselele kuthebhu yezindaba.</string>
+        <string name="no_title_available">Asikho isihloko esitholakalayo</string>
+        <string name="email_cannot_be_empty">I-imeyili ayikwazi ukuba ngeyize</string>
+        <string name="invalid_email_format">Ifomethi ye-imeyili ayivumelekile</string>
+        <string name="password_cannot_be_empty">Iphasiwedi ayikwazi ukuba ngeyize</string>
+        <string name="no_title">(Asikho isihloko)</string>
+        <string name="no_questions_returned">Awekho imibuzo ebuyisiwe</string>
+        <string name="you_scored_out_of">Uthole u-%1$d kokungu-%2$d</string>
+        <string name="difficulty2">Ubunzima: %1$s</string>
+        <string name="question">Umbuzo %1$d / %2$d</string>
+        <string name="failed_to_load_questions">Kuhlulekile ukulayisha imibuzo.</string>
+        <string name="first_name_cannot_be_empty">Igama alikwazi ukuba ngeyize</string>
+        <string name="last_name_cannot_be_empty">Isibongo asikwazi ukuba ngeyize</string>
+        <string name="email_cannot_be_empty2">I-imeyili ayikwazi ukuba ngeyize</string>
+        <string name="invalid_email_format2">Ifomethi ye-imeyili ayivumelekile</string>
 
-        <string-array name="language_options">
+    <string-array name="language_options">
             <item>IsiNgisi</item>
             <item>IsiBhunu</item>
             <item>IsiZulu</item>

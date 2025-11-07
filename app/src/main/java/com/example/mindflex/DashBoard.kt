@@ -115,7 +115,7 @@ class DashBoard : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 if (gNewsArticles.isNotEmpty()) {
                     val randomArticle = gNewsArticles[Random.nextInt(gNewsArticles.size)]
-                    tvNewsSnippet.text = randomArticle.title ?: "No title available"
+                    tvNewsSnippet.text = randomArticle.title ?: getString(R.string.no_title_available)
 
                     // Click listener to open the full article
                     tvNewsSnippet.setOnClickListener {
@@ -131,7 +131,8 @@ class DashBoard : AppCompatActivity() {
                         }
                     }
                 } else {
-                    tvNewsSnippet.text = "No news available. Pull to refresh in News tab."
+                    tvNewsSnippet.text =
+                        getString(R.string.no_news)
                 }
             }
         }

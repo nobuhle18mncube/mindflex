@@ -64,8 +64,23 @@
         <string name="convert_to_task_set_reminder">Skakel om na Taak / Stel Herinnering</string>
         <string name="save_note">Stoor Nota</string>
         <string name="bold">Vet</string>
+        <string name="no_news">Geen nuus beskikbaar nie. Trek af om in die Nuus-oortjie te herlaai.</string>
+        <string name="no_title_available">Geen titel beskikbaar nie</string>
+        <string name="email_cannot_be_empty">E-pos mag nie leeg wees nie</string>
+        <string name="invalid_email_format">Ongeldige e-pos formaat</string>
+        <string name="password_cannot_be_empty">Wagwoord mag nie leeg wees nie</string>
+        <string name="no_title">(Geen titel)</string>
+        <string name="no_questions_returned">Geen vrae ontvang nie</string>
+        <string name="you_scored_out_of">Jy het %1$d uit %2$d behaal</string>
+        <string name="difficulty2">Moeilikheidsgraad: %1$s</string>
+        <string name="question">Vraag %1$d / %2$d</string>
+        <string name="failed_to_load_questions">Kon nie vrae laai nie.</string>
+        <string name="first_name_cannot_be_empty">Voornaam mag nie leeg wees nie</string>
+        <string name="last_name_cannot_be_empty">Van mag nie leeg wees nie</string>
+        <string name="email_cannot_be_empty2">E-pos mag nie leeg wees nie</string>
+        <string name="invalid_email_format2">Ongeldige e-pos formaat</string>
 
-        <string-array name="language_options">
+    <string-array name="language_options">
             <item>Engels</item>
             <item>Afrikaans</item>
             <item>Zoeloe</item>
