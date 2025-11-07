@@ -40,12 +40,12 @@ It features persistent login, offline-first news caching, and full multi-languag
 
 | Login Screen | Dashboard | News (Offline) |
 |---------------|------------|----------------|
-| [WhatsApp Image 2025-11-07 at 17 46 13](https://github.com/user-attachments/assets/3ec85604-57aa-47a6-8213-c0b5232a8599)
- | ![Dashboard](assets/dashboard.png) | ![News](assets/news.png) |
+| ![Login Screen](https://github.com/user-attachments/assets/285f64d5-fb77-4fe5-a288-22c5641051bf) | ![Dashboard](https://github.com/user-attachments/assets/53490c96-dec8-47c6-bc16-068bb21e6697) | ![News](https://github.com/user-attachments/assets/a9d4b75c-7019-4dc1-a09c-5c8e4adb9f92)) |
 
 | Notes | Quizzes | Settings |
-|-------|----------|-----------|
-| ![Notes](assets/notes.png) | ![Quizzes](assets/quizzes.png) | ![Settings](assets/settings.png) |
+|--------|----------|-----------|
+| ![Notes](https://github.com/user-attachments/assets/d1291dc9-f02c-4385-864f-e3903e389992) | ![Quizzes![WhatsApp Image 2025-11-07 at 20 02 30](https://github.com/user-attachments/assets/6b456200-eece-4241-8438-943914bb7312) | ![Settings](https://github.com/user-attachments/assets/0d9b7eba-829e-4f31-8938-7e4719f971d9) |
+
 
 ---
 
