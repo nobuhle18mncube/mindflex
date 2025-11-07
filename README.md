@@ -79,4 +79,4 @@ It features persistent login, offline-first news caching, and full multi-languag
 **1️⃣ Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/mindflex.git
+git clone https://github.com/nobuhle18mncube/mindflex
