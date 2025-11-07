@@ -1,26 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">mindflex</string>
+    <string name="app_name">MindFlex</string>
     <string name="hero_image">MindFlex hero image</string>
 
-    <!-- settings -->
+    <!--settings english -->
     <string name="settings_title">Settings</string>
     <string name="appearance">Appearance</string>
-    <string name="theme">Theme</string>
-    <string name="note_encryption">Note encryption</string>
-    <string name="login_security">Login &amp; security</string>
+    <string name="theme">Dark Theme</string>
+    <string name="security">Security</string>
+    <string name="note_encryption">Encrypt Notes</string>
+    <string name="login_security">Login Security</string>
     <string name="cloud_sync">Cloud Sync</string>
-    <string name="sync_on">Sync On</string>
+    <string name="sync_on">Enable Sync</string>
 
-    <!-- profile / accessibility -->
-    <string name="profile_image_desc">Profile image</string>
+    <!-- Afrikaans -->
+    <string name="app_name_af">MindFlex</string>
+    <string name="settings_title_af">Instellings</string>
+    <string name="profile_image_desc_af">Profielprent</string>
+    <string name="username_label_af">Gebruikersnaam</string>
+    <string name="email_label_af">E-pos</string>
+    <string name="appearance_af">Voorkoms</string>
+    <string name="theme_af">Donker Tema</string>
+    <string name="security_af">Sekuriteit</string>
+    <string name="note_encryption_af">Enkripteer Notas</string>
+    <string name="login_security_af">Aanmeldingssekuriteit</string>
+    <string name="cloud_sync_af">Wolksinkronisasie</string>
+    <string name="sync_on_af">Aktiveer Sinkronisasie</string>
+
+
+    <!-- Zulu -->
+    <string name="app_name_zu">MindFlex</string>
+    <string name="settings_title_zu">Izilungiselelo</string>
+    <string name="profile_image_desc_zu">Isithombe sephrofayela</string>
+    <string name="username_label_zu">Igama lomsebenzisi</string>
+    <string name="email_label_zu">I-imeyili</string>
+    <string name="appearance_zu">Ukubukeka</string>
+    <string name="theme_zu">Itimu emnyama</string>
+    <string name="security_zu">Ezokuphepha</string>
+    <string name="note_encryption_zu">Fihla amanothi</string>
+    <string name="login_security_zu">Ukuphepha kokungena ngemvume</string>
+    <string name="cloud_sync_zu">Ukuvumelanisa nefini</string>
+    <string name="sync_on_zu">Vumela ukuvumelanisa</string>
+
+
+    <!--profile / accessibility-->
+    <string name="profile_image_desc">Profile Image</string>
     <string name="username_label">Username</string>
     <string name="email_label">Email</string>
 
-    <!-- task manager / common -->
+    <!--task manager / common-->
     <string name="back">Back</string>
     <string name="add_task">Add Task</string>
 
-    <string name="security">Security</string>
 
+
+    <!--language-->
+    <string name="language">Language</string>
+    <string name="select_language">Select Language</string>
+    <string-array name="language_options">
+        <item>English</item>
+        <item>Afrikaans</item>
+        <item>Zulu</item>
+    </string-array>
 
 </resources>
