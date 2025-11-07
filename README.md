@@ -36,7 +36,7 @@ It features persistent login, offline-first news caching, and full multi-languag
 ## 🎥 Demo & Screenshots
 
 📺 **Watch the demo video:**  
-[▶️ Watch on YouTube]([https://youtu.be/WwkTLGWo6GU](https://youtu.be/WwkTLGWo6GU))
+([https://youtu.be/WwkTLGWo6GU](https://youtu.be/WwkTLGWo6GU))
 
 | Login Screen | Dashboard | News (Offline) |
 |---------------|------------|----------------|
