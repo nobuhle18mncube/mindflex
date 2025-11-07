@@ -40,7 +40,8 @@ It features persistent login, offline-first news caching, and full multi-languag
 
 | Login Screen | Dashboard | News (Offline) |
 |---------------|------------|----------------|
-| ![Login](assets/login.png) | ![Dashboard](assets/dashboard.png) | ![News](assets/news.png) |
+| ![Login](![WhatsApp Image 2025-11-07 at 17 46 13](https://github.com/user-attachments/assets/3ec85604-57aa-47a6-8213-c0b5232a8599)
+) | ![Dashboard](assets/dashboard.png) | ![News](assets/news.png) |
 
 | Notes | Quizzes | Settings |
 |-------|----------|-----------|
