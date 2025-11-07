@@ -75,17 +75,17 @@ class MainActivity : BaseActivity() {
             val password = editTextPassword.text.toString()
 
             if (email.isEmpty()) {
-                editTextEmail.error = "Email cannot be empty"
+                editTextEmail.error = getString(R.string.email_cannot_be_empty)
                 return@setOnClickListener
             }
 
             if (!isValidEmail(email)) {
-                editTextEmail.error = "Invalid email format"
+                editTextEmail.error = getString(R.string.invalid_email_format)
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
-                editTextPassword.error = "Password cannot be empty"
+                editTextPassword.error = getString(R.string.password_cannot_be_empty)
                 return@setOnClickListener
             }
 

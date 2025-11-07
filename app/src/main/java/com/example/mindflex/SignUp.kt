@@ -45,34 +45,34 @@ class SignUp : AppCompatActivity() {
 
             // Basic validation (first/last name optional - remove if you don't need them)
             if (firstName.isEmpty()) {
-                editTextFirstName?.error = "First name cannot be empty"
+                editTextFirstName?.error = getString(R.string.first_name_cannot_be_empty)
                 return@setOnClickListener
             }
             if (lastName.isEmpty()) {
-                editTextLastName?.error = "Last name cannot be empty"
+                editTextLastName?.error = getString(R.string.last_name_cannot_be_empty)
                 return@setOnClickListener
             }
 
             if (email.isEmpty()) {
-                editTextEmail2?.error = "Email cannot be empty"
+                editTextEmail2?.error = getString(R.string.email_cannot_be_empty2)
                 return@setOnClickListener
             } else if (!isValidEmail(email)) {
-                editTextEmail2?.error = "Invalid email format"
+                editTextEmail2?.error = getString(R.string.invalid_email_format2)
                 return@setOnClickListener
             }
 
             if (password.isEmpty()) {
-                editTextPassword2?.error = "Password cannot be empty"
+                editTextPassword2?.error = getString(R.string.password_cannot_be_empty2)
                 return@setOnClickListener
             }
 
             if (confirmPassword.isEmpty()) {
-                editTextConfirmPassword?.error = "Please confirm your password"
+                editTextConfirmPassword?.error = getString(R.string.please_confirm_your_password2)
                 return@setOnClickListener
             }
 
             if (password != confirmPassword) {
-                editTextConfirmPassword?.error = "Passwords do not match"
+                editTextConfirmPassword?.error = getString(R.string.passwords_do_not_match2)
                 return@setOnClickListener
             }
 

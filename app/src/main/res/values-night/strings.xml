@@ -38,4 +38,19 @@
     <string name="convert_to_task_set_reminder">Convert to Task / Set Reminder</string>
     <string name="save_note">Save Note</string>
     <string name="bold">Bold</string>
+    <string name="no_news">No news available. Pull to refresh in News tab.</string>
+    <string name="no_title_available">No title available</string>
+    <string name="email_cannot_be_empty">Email cannot be empty</string>
+    <string name="invalid_email_format">Invalid email format</string>
+    <string name="password_cannot_be_empty">Password cannot be empty</string>
+    <string name="no_title">(No title)</string>
+    <string name="no_questions_returned">No questions returned</string>
+    <string name="you_scored_out_of">You scored %1$d out of %2$d</string>
+    <string name="difficulty2">Difficulty: %1$s</string>
+    <string name="question">Question %1$d / %2$d</string>
+    <string name="failed_to_load_questions">Failed to load questions.</string>
+    <string name="first_name_cannot_be_empty">First name cannot be empty</string>
+    <string name="last_name_cannot_be_empty">Last name cannot be empty</string>
+    <string name="email_cannot_be_empty2">Email cannot be empty</string>
+    <string name="invalid_email_format2">Invalid email format</string>
 </resources>

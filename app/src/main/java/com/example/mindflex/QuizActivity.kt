@@ -96,7 +96,7 @@ class QuizActivity : AppCompatActivity() {
                         currentIndex = 0
                         showQuestion(0)
                     } else {
-                        showError("No questions returned")
+                        showError(getString(R.string.no_questions_returned))
                     }
                 } else {
                     showError("HTTP ${response.code()}")
@@ -112,16 +112,16 @@ class QuizActivity : AppCompatActivity() {
 
     private fun showError(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
-        tvQuestion.text = "Failed to load questions."
+        tvQuestion.text = getString(R.string.failed_to_load_questions)
         rgAnswers.removeAllViews()
     }
 
     private fun showQuestion(index: Int) {
         val q = questions[index]
-        tvQuestionIndex.text = "Question ${index + 1} / ${questions.size}"
+        tvQuestionIndex.text = getString(R.string.question, index + 1, questions.size)
         // OpenTDB returns HTML escaped strings — decode
         tvQuestion.text = Html.fromHtml(q.question, Html.FROM_HTML_MODE_LEGACY)
-        tvDifficulty.text = "Difficulty: ${q.difficulty.capitalize(Locale.ROOT)}"
+        tvDifficulty.text = getString(R.string.difficulty2, q.difficulty.capitalize(Locale.ROOT))
 
         // Build options list (correct + incorrect), shuffle
         val options = mutableListOf<String>()
@@ -186,7 +186,7 @@ class QuizActivity : AppCompatActivity() {
         }
         score = correct
         tvResult.visibility = View.VISIBLE
-        tvResult.text = "You scored $score out of ${questions.size}"
+        tvResult.text = getString(R.string.you_scored_out_of, score, questions.size)
         // Optionally disable controls
         btnNext.isEnabled = false
         btnPrev.isEnabled = false
