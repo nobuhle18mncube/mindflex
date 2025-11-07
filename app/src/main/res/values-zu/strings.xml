@@ -4,7 +4,7 @@
     <string name="hero_image">MindFlex hero image</string>
 
     <!--settings english -->
-    <string name="settings_title">Settings</string>
+    <string name="settings_title">dhgfdgfdgfdgjgfhj</string>
     <string name="appearance">Appearance</string>
     <string name="theme">Dark Theme</string>
     <string name="security">Security</string>
@@ -22,6 +22,8 @@
     <string name="back">Back</string>
     <string name="add_task">Add Task</string>
 
+
+
     <!--language-->
     <string name="language">Language</string>
     <string name="select_language">Select Language</string>
@@ -30,5 +32,4 @@
         <item>Afrikaans</item>
         <item>Zulu</item>
     </string-array>
-
 </resources>
